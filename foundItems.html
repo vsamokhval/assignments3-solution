@@ -1,0 +1,21 @@
+<div class="items-list">
+    <table>
+    <!--<ol>-->
+
+        <!--<li ng-repeat="item in items">-->
+            <tr ng-repeat="item in items">
+            <td >
+            <span class="title">Name: </span><span ng-bind="item.name"></span><br>
+            <!--<button ng-click="onRemove({index: $index});">Don't want this one!</button><br>-->
+            <span class="title">Description: </span><span ng-bind="item.description"></span>
+            </td>
+            <td width="20%">
+            <button ng-click="onRemove({index: $index});">Don't want this one!</button>
+            </td>
+            </tr>
+        <!--</li>-->
+    <!--</ol>-->
+        </table>
+</div>
+
+<div class="warning" ng-if="!items.length">{{emptyResult}}</div>
