@@ -1,21 +1,19 @@
 <div class="items-list">
     <table>
-    <!--<ol>-->
-
-        <!--<li ng-repeat="item in items">-->
-            <tr ng-repeat="item in items">
+        <tr ng-repeat="item in items">
+            <td width="20%">
+                <span class="title">Name: </span><br>
+                <span class="item-name" ng-bind="item.name"></span>
+            </td>
             <td >
-            <span class="title">Name: </span><span ng-bind="item.name"></span><br>
-            <!--<button ng-click="onRemove({index: $index});">Don't want this one!</button><br>-->
-            <span class="title">Description: </span><span ng-bind="item.description"></span>
+                <span class="title">Description: </span><br>
+                <span class="description" ng-bind="item.description"></span>
             </td>
             <td width="20%">
-            <button ng-click="onRemove({index: $index});">Don't want this one!</button>
+                <button ng-click="onRemove({index: $index});">Don't want this one!</button>
             </td>
-            </tr>
-        <!--</li>-->
-    <!--</ol>-->
-        </table>
+        </tr>
+    </table>
 </div>
 
-<div class="warning" ng-if="!items.length">{{emptyResult}}</div>
+<div class="warning" ng-if="items !== null && !items.length">{{emptyResult}}</div>

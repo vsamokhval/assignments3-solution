@@ -59,11 +59,14 @@ input[type="text"] {
   font-weight: bold;
   color: darkgreen;
 }
+.item-name {
+  font-weight: bold;
+}
 
 .items-list {
   clear:both;
 }
 
-table {
-  width: 70%;
+.description, .title, .item-name {
+  padding: 0px 5px 0px 5px;
 }

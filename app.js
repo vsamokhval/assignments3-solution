@@ -7,7 +7,6 @@
         .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
         .directive('foundItems', FoundItems);
 
-
     function FoundItems() {
         var ddo = {
             templateUrl: 'foundItems.html',
@@ -26,11 +25,10 @@
         var vm = this;
 
         vm.searchTerm = '';
-        vm.found = [];
+        vm.found = null;
         vm.emptyResult = 'Nothing found';
 
         vm.getMatchedMenuItems = function () {
-
             if (!vm.searchTerm) {
                 vm.found = [];
                 return;
@@ -59,7 +57,7 @@
                 url: (ApiBasePath + '/menu_items.json')
             }).then(function (response) {
                 var result = [];
-                if (response.data.menu_items && response.dta.menu_items.length) {
+                if (response.data.menu_items && response.data.menu_items.length) {
                     response.data.menu_items.forEach(function (item) {
                         if (item.description.indexOf(searchTerm.toLocaleLowerCase()) > -1) {
                             result.push(item);
@@ -71,7 +69,5 @@
 
         };
     };
-
-
 
 })();
