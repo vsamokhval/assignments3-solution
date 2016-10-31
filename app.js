@@ -58,10 +58,8 @@
             }).then(function (response) {
                 var result = [];
                 if (response.data.menu_items && response.data.menu_items.length) {
-                    response.data.menu_items.forEach(function (item) {
-                        if (item.description.indexOf(searchTerm.toLocaleLowerCase()) > -1) {
-                            result.push(item);
-                        }
+                    result = response.data.menu_items.filter(function (item) {
+                        return item.description.indexOf(searchTerm) !== -1;
                     });
                 }
                 return result;
