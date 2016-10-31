@@ -67,6 +67,10 @@ input[type="text"] {
   clear:both;
 }
 
+.short-name {
+
+}
+
 .description, .title, .item-name {
   padding: 0px 5px 0px 5px;
 }
